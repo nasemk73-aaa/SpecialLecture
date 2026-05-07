@@ -1,1 +1,12 @@
-def Calculate:
+import csv
+
+
+class CSVPrinter:
+    def init(self, file_name):
+        self.file_name = file_name
+
+    def read(self):
+        with open(self.file_name) as f:
+            reader = csv.reader(f)
+            lines = [row for row in reader]
+        return lines
