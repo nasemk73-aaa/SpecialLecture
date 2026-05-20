@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Install tox
-        run: pip install --only-binary=:all: tox==4.16.0
+        run: "pip install --only-binary=:all: tox==4.16.0"
       - name: Run tox
         run: tox -e py
       - name: SonarCloud Scan
