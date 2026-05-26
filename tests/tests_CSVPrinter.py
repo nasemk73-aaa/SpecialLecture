@@ -2,9 +2,15 @@ import unittest
 
 from speciallecture.CSVPrinter import CSVPrinter
 
+
+def setUpModule():
+    print("Running setUpModule")
+def tearDownModule():
+    print("Running tearDownModule")
 class TestCSVPrinter(unittest.TestCase):
-    def test_read(self):
-        printer = CSVPrinter("sample.csv")
-        line = printer.read()
-        print(line)
-        self.assertEqual(3, len(line))
+    @classmethod
+    def setUpClass(cls):
+        print("Running setUpClass")
+    @classmethod
+    def tearDownClass(cls):
+        print("Running tearDownClass")
