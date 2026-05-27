@@ -4,6 +4,15 @@ from speciallecture.CSVPrinter import CSVPrinter
 
 class TestCSVPrinter(unittest.TestCase):
     def test_read(self):
+        printer = CSVPrinter("sample.csv")
+        line = printer.read()
+        print(line)
+        self.assertEqual(3, len(line))
+
+"""
+Code Smellのプログラム
+class TestCSVPrinter(unittest.TestCase):
+    def test_read(self):
         #Magic Number / Magic String (意味不明な定数)
         file_name = "sample.csv"
         #わざと不要な変数を増やす
@@ -28,4 +37,5 @@ class TestCSVPrinter(unittest.TestCase):
         else:
             result = False
         #Assertion Obscurity
-        self.assertTrue(result)
+        self.assertEqual(True, result)
+"""
